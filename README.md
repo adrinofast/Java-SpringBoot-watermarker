@@ -1,2 +1,2 @@
-# aws-lambda-watermark
-AWS lambda function to watermark on a image.
+# Java-Spring-Boot-watermarker
+Watermarks the uploaded image.
