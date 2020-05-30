@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<title>Water-Marker</title>
+
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Water-Marker</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      
+    </div>
+  </div>
+</nav>
+
+<body>
+
+
+<form action="upload" method="POST"enctype="multipart/form-data">
+
+<table class="table">
+<tr>
+      <th scope="col">
+		        <div class="form-group">
+		    <label for="exampleInputEmail1">Water-Mark Text</label>
+		    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter text" name="markedtext">
+		    
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Password</label>
+		    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+		  </div>
+		  <div class="form-group form-check">
+		    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+		    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+		  </div>
+		 
+      
+      </th>
+      <th scope="col">
+		      <div class="col-sm-6" style="width=50px">
+		    <div class="card">
+		      <div class="card-body">
+		        
+						
+						<input type="file" accept ="image/*" id="files" name="file"  > 
+						<img class="img-thumbnail" id="image" />
+						
+				
+		     
+		    </div>
+		  </div>
+		  </div>
+		      
+		      
+      
+      </th>
+      
+</tr>
+
+
+
+
+</table>
+<input type="submit" class="btn btn-primary" value="Process the Image"/>
+</form>
+
+</body>
+
+<script >
+
+if (window.FileList && window.File && window.FileReader) {
+	const imageLoaded = document.getElementById('image');
+
+	document.getElementById('files').addEventListener('change', event => {
+		imageLoaded.src ='';
+		 const file = event.target.files[0];
+		 var reader = new FileReader();
+		 reader.addEventListener('load', event => {
+			 imageLoaded.src = event.target.result;
+	       });
+		 reader.readAsDataURL(file);
+		
+	}
+	);
+	
+}
+
+</script>
+</html>
